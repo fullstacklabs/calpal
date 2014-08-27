@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html ng-app="CalPal">
+<head>
+  <title>Roost Calendar Palette</title>
+  <link rel="stylesheet" type="text/css" href="grid.css">
+  <link rel="stylesheet" type="text/css" href="colors.css">
+  <script src="https://cdn.jsdelivr.net/angularjs/1.2.20/angular.min.js"></script>
+  <script src="site.js"></script>
+</head>
+
+<body ng-controller="ColorsController">
+
+  <div class="tile"
+   ng-repeat="color in colors"
+    ng-class="color.done ? (color.name | done) : color.name"
+    ng-click="toggleDone( color )">
+
+    <p class="tile-label">
+      {{ color.name | titleCase }}
+    </p>
+
+  </div>
+
+</body>
+</html>
